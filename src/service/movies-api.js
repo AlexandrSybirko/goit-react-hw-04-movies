@@ -1,23 +1,44 @@
 const BASE_URL = 'https://api.themoviedb.org/3';
 const API_KEY = '2c8047fe24212bec24c8e99b54a108ca';
 
+async function fetchWithErrorHandling(url = '', config = {}) {
 
-
-function fetchTrendingMoves() {
-
-  return fetch(
-    `${BASE_URL}/trending/all/day?api_key=${API_KEY}`,
-  ).then(response => {
-    if (response.ok) {
-      return response.json();
-    }
-
-    return Promise.reject(new Error('No response from server'));
-  });
+  const response = await fetch(url, config);
+  return response.ok
+    ? await response.json()
+    : Promise.reject(new Error('Not found'));
+}
+    
+export function fetchTrendingMovies() {
+  return fetchWithErrorHandling(`${BASE_URL}/trending/movie/day?api_key=${API_KEY}`);
 }
 
-const api = {
-  fetchTrendingMoves,
+export function fetchMoviesByName(name) {
+  return fetchWithErrorHandling(
+    `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${name}&language=en-US&page=1&include_adult=false`,
+  );
 }
 
-export default api;
+export function fetchMovieDetails(id) {
+  console.log(id);
+  return fetchWithErrorHandling(
+    `${BASE_URL}/movie/${id}?api_key=${API_KEY}&language=en-US`,
+  );
+}
+
+export function fetchMovieCast(id) {
+  return fetchWithErrorHandling(
+    `${BASE_URL}/movie/${id}/credits?api_key=${API_KEY}&language=en-US`,
+  );
+}
+
+export function fetchMovieReviews(id) {
+  return fetchWithErrorHandling(
+    `${BASE_URL}/movie/${id}/reviews?api_key=${API_KEY}&language=en-US`,
+  );
+}
+
+  
+
+
+
