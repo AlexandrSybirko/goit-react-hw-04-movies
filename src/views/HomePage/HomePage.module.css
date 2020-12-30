@@ -28,7 +28,7 @@ body {
 }
 
 .item:hover {
-  transform: scale(1.03);
+  transform: rotate(360deg);
   box-shadow: 0 2px 4px rgba(49, 83, 236, 0.548);
 }
 

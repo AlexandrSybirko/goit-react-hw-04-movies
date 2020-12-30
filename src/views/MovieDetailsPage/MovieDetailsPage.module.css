@@ -1,0 +1,55 @@
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+  border-bottom: 1px solid #2a363b;
+}
+
+.image {
+  width: 300px;
+  height: auto;
+}
+
+.title {
+  font-size: 26px;
+}
+
+.subtitle {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.description {
+  max-width: 600px;
+}
+
+.nav {
+  text-align: center;
+}
+
+.link {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 500;
+  color: #070707;
+  font-size: 22px;
+}
+
+.link:hover {
+  transform: scale(1.15);
+}
+
+.activeLink {
+  composes: link;
+  color: #2196f3;
+}
+
+.list {
+  padding-left: 10px;
+}
+
+.item {
+  padding-left: 0;
+}

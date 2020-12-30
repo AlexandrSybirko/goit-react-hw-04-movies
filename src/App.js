@@ -3,7 +3,7 @@ import AppBar from './components/AppBar/AppBar';
 import Container from './components/Container/Container';
 import HomePage from './views/HomePage/HomePage';
 import MoviesPage from './views/MoviesPage/MoviesPage';
-// import MovieDetailsPage from './views/MovieDetailsPage/MovieDetailsPage';
+import MovieDetailsPage from './views/MovieDetailsPage/MovieDetailsPage';
   
 export default function App() {
   return (
@@ -16,13 +16,13 @@ export default function App() {
           <HomePage />
         </Route>
 
-        <Route path="/movies">
+        <Route path="/movies" exact>
           <MoviesPage />
         </Route>
 
-        {/* <Route path="/movies/:movieId">
+        <Route path="/movies/:movieId">
           <MovieDetailsPage />
-        </Route> */}
+        </Route>
 
       
       </Switch>

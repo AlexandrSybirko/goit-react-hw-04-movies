@@ -2,9 +2,18 @@
   display: inline-block;
   text-decoration: none;
   padding: 12px;
-  font-weight: 500;
   color: #2a363b;
-  font-size: 18px;
+  font-family: Special Elite;
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.link:hover {
+  transform: scale(1.15);
+}
+
+.link:last-child {
+  margin-left: 100px;
 }
 
 .activeLink {
