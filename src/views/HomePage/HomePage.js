@@ -57,7 +57,7 @@ export default function HomePage() {
                           src={poster + film.poster_path}
                           alt={film.title}
                           width="300"
-                          height="450"
+                          // height="450"
                         />
                         <p className={s.filmTitle}>{film.title}</p>
                       </Link>
