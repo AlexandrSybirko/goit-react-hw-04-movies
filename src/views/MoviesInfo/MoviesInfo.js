@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { fetchMoviesByName } from '../../service/movies-api';
 
 import FilmLoaderView from '../FilmLoaderView/FilmLoaderView';
@@ -77,8 +78,8 @@ if (!moviesName) {
     );
   }
 
-        
-      
-
-  
+   
+}
+MoviesInfo.propTypes = {
+  moviesName: PropTypes.string.isRequired,
 }
