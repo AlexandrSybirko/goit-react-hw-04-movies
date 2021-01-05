@@ -24,9 +24,7 @@ export default function Cast({ movieId }) {
                       className={s.image}
                       src={poster + item.profile_path}
                       alt={item.name}
-                      widht="100"
-                      height="150"
-                    />
+                      />
                             <p> {item.name}</p>
                              <span>Charachter: {item.character}</span>
                   </li>
